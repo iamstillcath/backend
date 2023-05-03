@@ -14,8 +14,5 @@ ProductRouter.put("/:id", updatedProduct);
 
 ProductRouter.delete("/:id", deleteProduct);
 
-// router.post('/user', register)
-
-// router.post('/login', login)
 
 export default ProductRouter;
