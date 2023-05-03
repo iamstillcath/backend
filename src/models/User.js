@@ -11,7 +11,10 @@ const UserSchema = new Schema({
               return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(v);
             },
             message: (props) => `Enter a valid ${props.path} address!`,
+            message: (props) => `Email has to be ${props.path} address!`,
           },
+          unique: true,
+        
     },
     username: {
         type: String,
@@ -40,10 +43,7 @@ const UserSchema = new Schema({
       maxLength: 14,
     },
     _id: mongoose.Schema.Types.ObjectId,
-    name: {
-      type: String,
-      required: true,
-    },
+  
 });
 
 const User = mongoose.model("User", UserSchema);
