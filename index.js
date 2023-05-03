@@ -7,6 +7,7 @@ import UserRouter from "./src/routes/UserRouter.js";
 const app = express();
 dotenv.config();
 app.use(express.json());
+const PORT = process.env.PORT || 5000
 
 mongoose
     .connect(process.env.DATABASE_URL, {
@@ -24,6 +25,6 @@ app.use('/products', ProductRouter);
 app.use('/users', UserRouter);
 
 app.listen(5000, () => {
-    console.log("Server is running on port ");
+    console.log(`Server is running on port ${PORT}`);
 });
 
